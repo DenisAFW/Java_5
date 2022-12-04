@@ -25,11 +25,15 @@ public class Roma {
         System.out.printf("Введите число: 1 - перевод в арабские цифры; 2 - перевод в римские цифры :");
         Integer choise = sc.nextInt();
         if (choise == 1) {
-            String word = sc.nextLine();
+            System.out.printf("Введите римское число: ");
+            Scanner f = new Scanner(System.in);
+            String word = f.nextLine();
             Integer result = numberTranslation(word);
             System.out.println(result);
+            f.close();
 
         } else if(choise == 2) {
+            System.out.printf("Введите арабское число: ");
             Integer word = sc.nextInt();
             String result = numberTranslation2(word);
             System.out.println(result);
@@ -87,7 +91,7 @@ public class Roma {
             }else if (number == 9) {
                 number -= 9;
                 result += "IX";
-            }else if (number > 5) {
+            }else if (number >= 5) {
                 number -= 5;
                 result += "V";
             } else if(number == 4){
